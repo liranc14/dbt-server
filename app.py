@@ -7,7 +7,6 @@ app = Flask(__name__)
 api = Api(app)
 
 # TODO log to client
-# TODO test packages 
 
 class DbtCommand(Resource):
     def post(self):
