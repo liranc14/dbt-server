@@ -9,6 +9,9 @@ RUN apt-get -y update
 RUN apt-get -y install git
 RUN pip install -r requirements.txt
 
+# placeholder to allow dbt deps
+COPY profiles.yml /root/.dbt/profiles.yml
+RUN dbt deps
 
 EXPOSE 5000
 
