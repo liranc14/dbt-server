@@ -7,12 +7,13 @@ app = Flask(__name__)
 api = Api(app)
 
 # TODO log to client
+# TODO test packages 
 
 class DbtCommand(Resource):
     def post(self):
         request_data = request.get_json(force=True)
         dbt_cmd = request_data['dbt']
-        run_cmd = subprocess.run(f'dbt deps && dbt {dbt_cmd}', shell=True)
+        run_cmd = subprocess.run(f'dbt {dbt_cmd}', shell=True)
         if run_cmd.returncode != 0:
             return {
                 'message': f'Command: << dbt {dbt_cmd} >> failed with return code {run_cmd.returncode}. Please '
