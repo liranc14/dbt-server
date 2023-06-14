@@ -1,0 +1,15 @@
+curl -XPOST -H "Content-type: application/json" -d '{"cmd":["dbt debug"]}' 'http://10.204.14.29:5000/'
+
+
+
+curl -XPOST -H "Content-type: application/json" -d '{"cmd":"dbt debug"}' 'http://127.0.0.1:5000/'
+
+
+
+curl -XPOST -H -d '{"cmd":"dbt debug"}' 'http://10.204.14.29:5000/'
+
+
+curl -XPOST -d '{"dbt":"debug"}' 'http://10.204.14.29:5000/'
+ 
+ 
+curl -XPOST -H "Content-type: application/json" -d '{"dbt":"debug"}' 'http://10.204.14.29:5000/'

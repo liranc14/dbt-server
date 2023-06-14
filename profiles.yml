@@ -1,0 +1,11 @@
+dbt_server:
+  target: postgres_test
+  outputs:
+    postgres_test:
+      type: postgres
+      host: hostname
+      user: username
+      password: password
+      port: 5432
+      dbname: database
+      schema: public
