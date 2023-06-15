@@ -2,3 +2,4 @@ dbt-postgres==1.5
 Flask==2.3.2
 Flask-RESTful==0.3.10
 gunicorn==20.1.0
+shelljob==0.6.3
