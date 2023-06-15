@@ -1,3 +1,4 @@
+# placeholder for running dbt deps on image build. real profiles.yml file should be mounted on docker run
 dbt_server:
   target: postgres_test
   outputs:
