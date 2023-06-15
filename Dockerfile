@@ -14,8 +14,9 @@ COPY profiles_placeholder.yml /root/.dbt/profiles_placeholder.yml
 RUN mv /root/.dbt/profiles_placeholder.yml /root/.dbt/profiles.yml
 RUN dbt deps
 
+COPY gunicorn.py /dbt_project/
 COPY app.py /dbt_project/
 
 EXPOSE 5000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "0", "--workers", "6", "app:app"]
+CMD ["gunicorn", "-c", "gunicorn.py", "app:app"]
