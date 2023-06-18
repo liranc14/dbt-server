@@ -1,0 +1,11 @@
+dbt_server:
+  target: test
+  outputs:
+    test:
+      type: "{{ env_var('DBT_TYPE') }}"
+      host: "{{ env_var('DBT_HOSTNAME') }}"
+      user: "{{ env_var('DBT_USERNAME') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      port: "{{ env_var('DBT_PORT') | int  }}"
+      dbname: "{{ env_var('DBT_DATABASE') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"

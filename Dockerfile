@@ -9,9 +9,7 @@ RUN apt-get -y update
 RUN apt-get -y install git
 RUN pip install -r requirements.txt
 
-# placeholder to allow dbt deps
-COPY profiles_placeholder.yml /root/.dbt/profiles_placeholder.yml
-RUN mv /root/.dbt/profiles_placeholder.yml /root/.dbt/profiles.yml
+COPY profiles.yml /root/.dbt/profiles.yml
 RUN dbt deps
 
 COPY gunicorn.py /dbt_project/
