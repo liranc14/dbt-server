@@ -15,6 +15,9 @@ RUN dbt deps
 COPY gunicorn.py /dbt_project/
 COPY app.py /dbt_project/
 
+COPY start.sh /dbt_project/
+RUN chmod +x /dbt_project/start.sh
+
 EXPOSE 5000
 
-CMD ["gunicorn", "-c", "gunicorn.py", "app:app"]
+CMD ["/dbt_project/start.sh"]
