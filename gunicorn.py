@@ -8,5 +8,5 @@ def max_workers():
 
 bind = '0.0.0.0:5000'
 max_requests = 1000
-workers = 2
+workers = max_workers()
 timeout = 0
