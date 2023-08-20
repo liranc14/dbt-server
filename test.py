@@ -1,9 +1,8 @@
 import requests
-from concurrent.futures import ThreadPoolExecutor, wait, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 
 concurrency = 1
-
 
 
 json_data = {
@@ -24,6 +23,7 @@ with ThreadPoolExecutor(max_workers=concurrency) as executor:
         print(json.loads(f.result()))
 
 
+# curl -XPOST -d '{"dbt":"debug"}' 'http://10.204.14.29:5000/'
 response = requests.post('http://10.204.14.29:5000/', json=json_data)
 print(response.content.decode('unicode-escape'))
 
