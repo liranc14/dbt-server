@@ -7,6 +7,7 @@ WORKDIR /dbt_project
 
 RUN apt-get -y update
 RUN apt-get -y install git
+RUN echo 'export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' >> ~/.profile
 RUN pip install -r requirements.txt
 
 COPY profiles.yml /root/.dbt/profiles.yml
